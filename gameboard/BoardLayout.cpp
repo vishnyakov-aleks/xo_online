@@ -17,14 +17,14 @@ void BoardLayout::setController(BoardController *controller) {
     this->controller = controller;
 
     for (unsigned int i = 0; i < controller->lineWidth; i++) {
-        setRowStretch(i, 100 / controller->lineWidth);
-        setColumnStretch(i, 100 / controller->lineWidth);
+        setRowStretch(i, 0);
+        setColumnStretch(i, 0);
     }
 
 
     for (unsigned int i = 0; i < controller->boardSize; i++) {
         auto *btn = new QPushButton(parentWidget());
-        btn->setText("");
+        btn->setText(" ");
         btn->setSizePolicy(QSizePolicy ::Expanding , QSizePolicy ::Expanding);
         addWidget(btn);
         connect(btn, &QPushButton::clicked, [this, btn, i](){

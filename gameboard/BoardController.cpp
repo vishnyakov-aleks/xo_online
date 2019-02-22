@@ -39,22 +39,22 @@ bool BoardController::checkBottomVertical(unsigned int currentCell, unsigned int
 
 bool BoardController::checkTopLeftDiagonal(unsigned int currentCell, unsigned int spiralLevel, char symbol) {
     int i = currentCell - (lineWidth * spiralLevel) - (1 * spiralLevel);
-    return i >= 0 && i%lineWidth >= 0 && board[i] == symbol;
+    return i >= 0 && i%lineWidth >= 0 && i%lineWidth < lineWidth-1 && board[i] == symbol;
 }
 
 bool BoardController::checkTopRightDiagonal(unsigned int currentCell, unsigned int spiralLevel, char symbol) {
     int i = currentCell - (lineWidth * spiralLevel) + (1 * spiralLevel);
-    return i >= 0 && i%lineWidth <= lineWidth-1 && board[i] == symbol;
+    return i >= 0 && i%lineWidth <= lineWidth-1 && i%lineWidth > 0 && board[i] == symbol;
 }
 
 bool BoardController::checkBottomLeftDiagonal(unsigned int currentCell, unsigned int spiralLevel, char symbol) {
     int i = currentCell + (lineWidth * spiralLevel) - (1 * spiralLevel);
-    return i < boardSize && i%lineWidth >= 0 && board[i] == symbol;
+    return i < boardSize && i%lineWidth >= 0 && i%lineWidth < lineWidth-1 && board[i] == symbol;
 }
 
 bool BoardController::checkBottomRightDiagonal(unsigned int currentCell, unsigned int spiralLevel, char symbol) {
     int i = currentCell + (lineWidth * spiralLevel) + (1 * spiralLevel);
-    return i < boardSize && i%lineWidth <= lineWidth-1 && board[i] == symbol;
+    return i < boardSize && i%lineWidth <= lineWidth-1 && i%lineWidth > 0 && board[i] == symbol;
 }
 
 bool BoardController::validate(unsigned int cellIndex, char playerSymbol) {

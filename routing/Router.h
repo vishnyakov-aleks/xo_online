@@ -7,6 +7,7 @@
 
 
 #include <QWidget>
+#include <QPropertyAnimation>
 #include "../gameboard/BoardController.h"
 
 class Router
@@ -15,8 +16,10 @@ private:
     Router() = default;
     Router( const Router&);
     Router& operator=( Router& ) = delete;
+    QPropertyAnimation* propertyAnimation;
     QWidget * rootWidget;
     void clearOldLayout();
+    void replaceWithAnimResize(QLayout * layout, int newWidth, int newHeight);
 public:
     static Router& getInstance() {
         static Router  instance;

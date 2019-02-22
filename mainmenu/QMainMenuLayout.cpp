@@ -12,8 +12,6 @@
 
 QMainMenuLayout::QMainMenuLayout(QWidget *parent) :
         QVBoxLayout(parent) {
-    parent->autoFillBackground();
-    parent->resize(80, 80);
     setAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
     auto *startNewGameButton = new QPushButton("Start new game");
     addWidget(startNewGameButton);
