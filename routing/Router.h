@@ -9,6 +9,7 @@
 #include <QWidget>
 #include <QPropertyAnimation>
 #include "../gameboard/BoardController.h"
+#include "IScreen.h"
 
 class Router
 {
@@ -30,8 +31,7 @@ public:
 
 
     /* SCREENS */
-    void setMainMenuScreen();
-    void setBoardScreen(BoardController * controller);
+    void replaceScreen(IScreen *screen);
 
 };
 

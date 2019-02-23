@@ -8,6 +8,7 @@
 
 #include <QWidget>
 #include <QPushButton>
+#include <QGridLayout>
 #include "BoardController.h"
 
 class BoardLayout: public QGridLayout {

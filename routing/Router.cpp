@@ -34,17 +34,6 @@ void Router::clearOldLayout() {
 
 }
 
-void Router::setMainMenuScreen() {
-    auto * mainMenu = new QMainMenuLayout();
-    replaceWithAnimResize(mainMenu, 200, 130);
-}
-
-void Router::setBoardScreen(BoardController * controller) {
-    auto * boardLayout = new BoardLayout();
-    boardLayout->setController(controller);
-    replaceWithAnimResize(boardLayout, 300, 300);
-}
-
 void Router::replaceWithAnimResize(QLayout *layout, int newWidth, int newHeight) {
     bool needMoveToCenter = rootWidget->layout() == nullptr;
     clearOldLayout();
@@ -52,7 +41,7 @@ void Router::replaceWithAnimResize(QLayout *layout, int newWidth, int newHeight)
     rootWidget->setLayout(layout);
     if (needMoveToCenter) {
         QDesktopWidget *pDescwidget=QApplication::desktop();
-        rootWidget->move(pDescwidget->width()/2-newWidth/2, pDescwidget->height()/2 - newHeight/2);
+        rootWidget->move(pDescwidget->width()/2 - newWidth/2, pDescwidget->height()/2 - newHeight/2);
         rootWidget->resize(newWidth, newHeight);
         return;
     }
@@ -60,18 +49,14 @@ void Router::replaceWithAnimResize(QLayout *layout, int newWidth, int newHeight)
 
     propertyAnimation->setStartValue(rootWidget->geometry());
     auto rect = QRectF(rootWidget->geometry());
-    std::cout << rect.width() << "\n";
-    std::cout << rect.height() << "\n";
     rect.setX(rect.x() + ((rect.width() - newWidth) / 2));
     rect.setY(rect.y() + ((rect.height() - newHeight) / 2));
     rect.setWidth(newWidth);
     rect.setHeight(newHeight);
     propertyAnimation->setEndValue(rect);
     propertyAnimation->start();
-    std::cout << "\n";
-    std::cout << rect.width() << "\n";
-    std::cout << rect.height() << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
+}
+
+void Router::replaceScreen(IScreen *screen) {
+    replaceWithAnimResize(screen->createLayout(), screen->widgetWidth, screen->widgetHeight);
 }

@@ -9,6 +9,7 @@
 #include "../gameboard/BoardController.h"
 #include "../gameboard/BoardLayout.h"
 #include "../routing/Router.h"
+#include "../routing/BoardScreen.h"
 
 QMainMenuLayout::QMainMenuLayout(QWidget *parent) :
         QVBoxLayout(parent) {
@@ -28,8 +29,7 @@ QMainMenuLayout::QMainMenuLayout(QWidget *parent) :
 }
 
 void QMainMenuLayout::openNewGame() {
-    auto boardController = new BoardController(5, 3);
-    Router::getInstance().setBoardScreen(boardController);
+    Router::getInstance().replaceScreen(new BoardScreen(6, 4));
 
 }
 

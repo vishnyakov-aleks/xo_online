@@ -5,6 +5,7 @@
 #include <QtWidgets/QLabel>
 #include "mainmenu/QMainMenuLayout.h"
 #include "routing/Router.h"
+#include "routing/MainMenuScreen.h"
 
 int main(int argc, char *argv[]) {
 
@@ -14,7 +15,7 @@ int main(int argc, char *argv[]) {
     rootWidget->setWindowTitle("XO - Game");
 
     Router::getInstance().init(rootWidget);
-    Router::getInstance().setMainMenuScreen();
+    Router::getInstance().replaceScreen(new MainMenuScreen());
     rootWidget->show();
     return QApplication::exec();
 }
