@@ -2,8 +2,6 @@
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QDesktopWidget>
-#include <QtWidgets/QLabel>
-#include "mainmenu/QMainMenuLayout.h"
 #include "routing/Router.h"
 #include "routing/MainMenuScreen.h"
 

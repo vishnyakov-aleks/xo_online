@@ -8,7 +8,6 @@
 
 #include <QWidget>
 #include <QPropertyAnimation>
-#include "../gameboard/BoardController.h"
 #include "IScreen.h"
 
 class Router

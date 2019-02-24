@@ -10,7 +10,7 @@ find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
 
-add_executable(xo_online main.cpp mainmenu/QMainMenuLayout.cpp mainmenu/QMainMenuLayout.h gameboard/BoardController.cpp gameboard/BoardController.h gameboard/BoardLayout.cpp gameboard/BoardLayout.h routing/Router.cpp routing/Router.h routing/IScreen.h routing/MainMenuScreen.cpp routing/MainMenuScreen.h routing/BoardScreen.cpp routing/BoardScreen.h)
+add_executable(xo_online main.cpp layout/mainmenu/QMainMenuLayout.cpp layout/mainmenu/QMainMenuLayout.h layout/gameboard/BoardController.cpp layout/gameboard/BoardController.h layout/gameboard/BoardLayout.cpp layout/gameboard/BoardLayout.h routing/Router.cpp routing/Router.h routing/IScreen.h routing/MainMenuScreen.cpp routing/MainMenuScreen.h routing/BoardScreen.cpp routing/BoardScreen.h layout/gamesettings/BoardSettingsLayout.cpp layout/gamesettings/BoardSettingsLayout.h routing/BoardSettingsScreen.cpp routing/BoardSettingsScreen.h)
 
 # указываем, какие библиотеки необходимо подключить
 target_link_libraries(${PROJECT_NAME} Qt5::Core)

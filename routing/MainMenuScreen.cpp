@@ -3,7 +3,7 @@
 //
 
 #include "MainMenuScreen.h"
-#include "../mainmenu/QMainMenuLayout.h"
+#include "../layout/mainmenu/QMainMenuLayout.h"
 
 MainMenuScreen::MainMenuScreen() {
     widgetHeight = 130;

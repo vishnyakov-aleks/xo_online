@@ -4,12 +4,10 @@
 
 
 #include <QObjectCleanupHandler>
-#include <iostream>
 #include <QDesktopWidget>
 #include <QApplication>
+#include <QLayout>
 #include "Router.h"
-#include "../mainmenu/QMainMenuLayout.h"
-#include "../gameboard/BoardLayout.h"
 
 void Router::init(QWidget *qWidget) {
     this->rootWidget = qWidget;
@@ -19,7 +17,7 @@ void Router::init(QWidget *qWidget) {
 }
 
 void Router::clearOldLayout() {
-    QLayout* layout = rootWidget->layout();
+    QLayout *layout = rootWidget->layout();
     if (layout == nullptr)
         return;
 

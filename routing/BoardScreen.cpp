@@ -3,7 +3,8 @@
 //
 
 #include "BoardScreen.h"
-#include "../gameboard/BoardLayout.h"
+#include "../layout/gameboard/BoardController.h"
+#include "../layout/gameboard/BoardLayout.h"
 
 QLayout *BoardScreen::createLayout() {
     auto * controller = new BoardController(linesCount, cellsToWin);
@@ -15,6 +16,6 @@ QLayout *BoardScreen::createLayout() {
 BoardScreen::BoardScreen(unsigned int linesCount, unsigned int cellsToWin) {
     this->linesCount = linesCount;
     this->cellsToWin = cellsToWin;
-    widgetWidth = 440;
-    widgetHeight = 400;
+    widgetWidth = 60 * linesCount + 40;
+    widgetHeight = 55 * linesCount;
 }

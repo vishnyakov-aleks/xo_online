@@ -3,13 +3,9 @@
 //
 
 #include <QPushButton>
-#include <iostream>
-#include <QObjectCleanupHandler>
 #include "QMainMenuLayout.h"
-#include "../gameboard/BoardController.h"
-#include "../gameboard/BoardLayout.h"
-#include "../routing/Router.h"
-#include "../routing/BoardScreen.h"
+#include "../../routing/Router.h"
+#include "../../routing/BoardSettingsScreen.h"
 
 QMainMenuLayout::QMainMenuLayout(QWidget *parent) :
         QVBoxLayout(parent) {
@@ -29,7 +25,7 @@ QMainMenuLayout::QMainMenuLayout(QWidget *parent) :
 }
 
 void QMainMenuLayout::openNewGame() {
-    Router::getInstance().replaceScreen(new BoardScreen(6, 4));
+    Router::getInstance().replaceScreen(new BoardSettingsScreen());
 
 }
 
