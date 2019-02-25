@@ -3,8 +3,8 @@
 //
 
 #include "BoardScreen.h"
-#include "../layout/gameboard/BoardController.h"
-#include "../layout/gameboard/BoardLayout.h"
+#include "BoardController.h"
+#include "BoardLayout.h"
 
 QLayout *BoardScreen::createLayout() {
     auto * controller = new BoardController(linesCount, cellsToWin);

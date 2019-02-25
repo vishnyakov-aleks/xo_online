@@ -3,11 +3,11 @@
 //
 
 #include "MainMenuScreen.h"
-#include "../layout/mainmenu/QMainMenuLayout.h"
+#include "QMainMenuLayout.h"
 
 MainMenuScreen::MainMenuScreen() {
     widgetHeight = 130;
-    widgetWidth = 300;
+    widgetWidth = 250;
 }
 
 QLayout *MainMenuScreen::createLayout() {

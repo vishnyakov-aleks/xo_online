@@ -3,10 +3,10 @@
 //
 
 #include "BoardSettingsScreen.h"
-#include "../layout/gamesettings/BoardSettingsLayout.h"
+#include "BoardSettingsLayout.h"
 
 QLayout *BoardSettingsScreen::createLayout() {
     widgetHeight = 130;
-    widgetWidth = 300;
+    widgetWidth = 200;
     return new BoardSettingsLayout();
 }

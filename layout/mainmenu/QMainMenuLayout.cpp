@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include "QMainMenuLayout.h"
 #include "../../routing/Router.h"
-#include "../../routing/BoardSettingsScreen.h"
+#include "../boardsettings/BoardSettingsScreen.h"
 
 QMainMenuLayout::QMainMenuLayout(QWidget *parent) :
         QVBoxLayout(parent) {

@@ -6,7 +6,7 @@
 #define XO_ONLINE_BOARDSCREEN_H
 
 
-#include "IScreen.h"
+#include "../../routing/IScreen.h"
 
 class BoardScreen : public IScreen {
 public:

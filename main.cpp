@@ -3,7 +3,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QDesktopWidget>
 #include "routing/Router.h"
-#include "routing/MainMenuScreen.h"
+#include "layout/mainmenu/MainMenuScreen.h"
 
 int main(int argc, char *argv[]) {
 

@@ -6,7 +6,7 @@
 #define XO_ONLINE_MAINMENUSCREEN_H
 
 
-#include "IScreen.h"
+#include "../../routing/IScreen.h"
 
 class MainMenuScreen : public IScreen {
 public:

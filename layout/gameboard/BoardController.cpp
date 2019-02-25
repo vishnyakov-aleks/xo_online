@@ -19,12 +19,12 @@ BoardController::BoardController(unsigned int lineWidth, unsigned int symbolsCou
 
 bool BoardController::checkLeftHorizontal(unsigned int currentCell, unsigned int spiralLevel, char symbol) {
     int i = currentCell - spiralLevel;
-    return i >= 0 && i%lineWidth >= 0 && i%lineWidth < lineWidth-1  && board[i] == symbol;
+    return i >= 0 && i % lineWidth >= 0 && i % lineWidth < lineWidth - 1 && board[i] == symbol;
 }
 
 bool BoardController::checkRightHorizontal(unsigned int currentCell, unsigned int spiralLevel, char symbol) {
     int i = currentCell + spiralLevel;
-    return i < boardSize && i % lineWidth <= lineWidth-1 && board[i] == symbol;
+    return i < boardSize && i % lineWidth <= lineWidth - 1 && i % lineWidth > 0 && board[i] == symbol;
 }
 
 bool BoardController::checkTopVertical(unsigned int currentCell, unsigned int spiralLevel, char symbol) {

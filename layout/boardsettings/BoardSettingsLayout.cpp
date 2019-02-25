@@ -8,7 +8,7 @@
 #include <QIntValidator>
 #include "BoardSettingsLayout.h"
 #include "../../routing/Router.h"
-#include "../../routing/BoardScreen.h"
+#include "../gameboard/BoardScreen.h"
 
 
 BoardSettingsLayout::BoardSettingsLayout(QWidget *parent) : QVBoxLayout(parent) {

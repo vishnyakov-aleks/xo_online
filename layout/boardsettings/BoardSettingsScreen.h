@@ -6,7 +6,7 @@
 #define XO_ONLINE_BOARDSETTINGSSCREEN_H
 
 
-#include "IScreen.h"
+#include "../../routing/IScreen.h"
 
 class BoardSettingsScreen : public IScreen {
     QLayout *createLayout() override;

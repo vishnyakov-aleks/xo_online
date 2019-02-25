@@ -7,7 +7,7 @@
 #include <QMessageBox>
 #include "BoardLayout.h"
 #include "../../routing/Router.h"
-#include "../../routing/MainMenuScreen.h"
+#include "../mainmenu/MainMenuScreen.h"
 
 
 BoardLayout::BoardLayout(QWidget *parent) : QGridLayout(parent) {
