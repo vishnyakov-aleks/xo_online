@@ -30,7 +30,14 @@ void BoardSettingsLayout::setController(BoardSettingsController *controller) {
     addWidget(cellsToWinField);
 
 
-    auto *startNewGameButton = new QPushButton("Start game");
+    auto *startNewGameButton = new QPushButton();
+
+    if (controller->isLocalGame) {
+        startNewGameButton->setText("Start Game");
+    } else {
+        startNewGameButton->setText("Start server");
+    }
+
     connect(startNewGameButton, &QPushButton::clicked, [=] {
         unsigned int linesCount = linesCountField->text().toUInt();
         unsigned int cellsToWin = cellsToWinField->text().toUInt();

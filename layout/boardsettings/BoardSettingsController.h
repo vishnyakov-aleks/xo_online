@@ -11,8 +11,6 @@ public:
     explicit BoardSettingsController(bool isLocalGame);
 
     void startGame(unsigned int linesCount, unsigned int cellsToWin);
-
-private:
     bool isLocalGame;
 };
 

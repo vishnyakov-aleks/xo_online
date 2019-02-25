@@ -64,7 +64,10 @@ void Router::replaceScreen(IScreen *screen) {
 }
 
 void Router::goBack() {
-    screenStack.pop_back();
+    if (screenStack.size() > 1) {
+        screenStack.pop_back();
+    }
+
     IScreen *screen = screenStack[screenStack.size() - 1];
     replaceWithAnimResize(screen->createLayout(), screen->widgetWidth, screen->widgetHeight);
 }
