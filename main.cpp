@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     rootWidget->setWindowTitle("XO - Game");
 
     Router::getInstance().init(rootWidget);
-    Router::getInstance().replaceScreen(new MainMenuScreen());
+    Router::getInstance().newChain(new MainMenuScreen());
     rootWidget->show();
     return QApplication::exec();
 }

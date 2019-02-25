@@ -56,5 +56,28 @@ void Router::replaceWithAnimResize(QLayout *layout, int newWidth, int newHeight)
 }
 
 void Router::replaceScreen(IScreen *screen) {
+    if (!screenStack.empty())
+        screenStack.pop_back();
+
+    screenStack.push_back(screen);
     replaceWithAnimResize(screen->createLayout(), screen->widgetWidth, screen->widgetHeight);
 }
+
+void Router::goBack() {
+    screenStack.pop_back();
+    IScreen *screen = screenStack[screenStack.size() - 1];
+    replaceWithAnimResize(screen->createLayout(), screen->widgetWidth, screen->widgetHeight);
+}
+
+void Router::navigateTo(IScreen *screen) {
+    screenStack.push_back(screen);
+    replaceWithAnimResize(screen->createLayout(), screen->widgetWidth, screen->widgetHeight);
+}
+
+void Router::newChain(IScreen *screen) {
+    screenStack.clear();
+    screenStack.push_back(screen);
+    replaceWithAnimResize(screen->createLayout(), screen->widgetWidth, screen->widgetHeight);
+}
+
+

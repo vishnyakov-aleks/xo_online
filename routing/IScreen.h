@@ -16,4 +16,5 @@ public:
     int widgetHeight = 0;
 
 };
+
 #endif //XO_ONLINE_ISCREEN_H

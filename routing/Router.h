@@ -20,6 +20,9 @@ private:
     QWidget * rootWidget;
     void clearOldLayout();
     void replaceWithAnimResize(QLayout * layout, int newWidth, int newHeight);
+
+    std::vector<IScreen *> screenStack;
+
 public:
     static Router& getInstance() {
         static Router  instance;
@@ -31,6 +34,12 @@ public:
 
     /* SCREENS */
     void replaceScreen(IScreen *screen);
+
+    void newChain(IScreen *screen);
+
+    void goBack();
+
+    void navigateTo(IScreen *screen);
 
 };
 

@@ -9,8 +9,12 @@
 #include "../../routing/IScreen.h"
 
 class BoardSettingsScreen : public IScreen {
+public:
+    explicit BoardSettingsScreen(bool isLocalGame);
     QLayout *createLayout() override;
 
+private:
+    bool isLocalGame;
 };
 
 

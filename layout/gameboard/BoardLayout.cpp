@@ -59,13 +59,13 @@ void BoardLayout::onCellClicked(unsigned int i, QPushButton *btn) {
         int result = QMessageBox::information(parentWidget(), "Game over", ("Player " +  QString::number(playerRan) + " WIN"),
                                               QMessageBox::Ok, QMessageBox::Ok );
         if (result == QMessageBox::Ok) {
-            Router::getInstance().replaceScreen(new MainMenuScreen());
+            Router::getInstance().newChain(new MainMenuScreen());
             return;
         }
     } else if (controller->cellFilledCount == controller->boardSize) {
         int result = QMessageBox::information(parentWidget(), "Game over", ("Nobody won..."), QMessageBox::Ok, QMessageBox::Ok );
         if (result == QMessageBox::Ok) {
-            Router::getInstance().replaceScreen(new MainMenuScreen());
+            Router::getInstance().newChain(new MainMenuScreen());
             return;
         }
     }

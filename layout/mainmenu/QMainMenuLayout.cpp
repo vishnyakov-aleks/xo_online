@@ -17,20 +17,26 @@ QMainMenuLayout::QMainMenuLayout(QWidget *parent) :
     });
 
     auto *findServerButton = new QPushButton("Search for the servers");
+    connect(findServerButton, &QPushButton::clicked, [=] {
+        findServers();
+    });
     addWidget(findServerButton);
 
 
     auto *startServerButton = new QPushButton("Start server");
+    connect(startServerButton, &QPushButton::clicked, [=] {
+        startServer();
+    });
     addWidget(startServerButton);
 }
 
 void QMainMenuLayout::openNewGame() {
-    Router::getInstance().replaceScreen(new BoardSettingsScreen());
+    Router::getInstance().navigateTo(new BoardSettingsScreen(true));
 
 }
 
 void QMainMenuLayout::startServer() {
-
+    Router::getInstance().navigateTo(new BoardSettingsScreen(false));
 }
 
 void QMainMenuLayout::findServers() {

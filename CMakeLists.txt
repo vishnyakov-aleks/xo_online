@@ -10,7 +10,7 @@ find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
 
-add_executable(xo_online main.cpp layout/mainmenu/QMainMenuLayout.cpp layout/mainmenu/QMainMenuLayout.h layout/gameboard/BoardController.cpp layout/gameboard/BoardController.h layout/gameboard/BoardLayout.cpp layout/gameboard/BoardLayout.h routing/Router.cpp routing/Router.h routing/IScreen.h layout/mainmenu/MainMenuScreen.cpp layout/mainmenu/MainMenuScreen.h layout/gameboard/BoardScreen.cpp layout/gameboard/BoardScreen.h layout/boardsettings/BoardSettingsLayout.cpp layout/boardsettings/BoardSettingsLayout.h layout/boardsettings/BoardSettingsScreen.cpp layout/boardsettings/BoardSettingsScreen.h)
+add_executable(xo_online main.cpp layout/mainmenu/QMainMenuLayout.cpp layout/mainmenu/QMainMenuLayout.h layout/gameboard/BoardController.cpp layout/gameboard/BoardController.h layout/gameboard/BoardLayout.cpp layout/gameboard/BoardLayout.h routing/Router.cpp routing/Router.h routing/IScreen.h layout/mainmenu/MainMenuScreen.cpp layout/mainmenu/MainMenuScreen.h layout/gameboard/BoardScreen.cpp layout/gameboard/BoardScreen.h layout/boardsettings/BoardSettingsLayout.cpp layout/boardsettings/BoardSettingsLayout.h layout/boardsettings/BoardSettingsScreen.cpp layout/boardsettings/BoardSettingsScreen.h layout/boardsettings/BoardSettingsController.cpp layout/boardsettings/BoardSettingsController.h)
 
 # указываем, какие библиотеки необходимо подключить
 target_link_libraries(${PROJECT_NAME} Qt5::Core)

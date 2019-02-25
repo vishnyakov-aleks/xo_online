@@ -8,10 +8,15 @@
 #include <QIntValidator>
 #include "BoardSettingsLayout.h"
 #include "../../routing/Router.h"
-#include "../gameboard/BoardScreen.h"
 
 
 BoardSettingsLayout::BoardSettingsLayout(QWidget *parent) : QVBoxLayout(parent) {
+
+}
+
+void BoardSettingsLayout::setController(BoardSettingsController *controller) {
+    this->controller = controller;
+
     addWidget(new QLabel("Enter lines count"));
 
     auto *linesCountField = new QLineEdit();
@@ -33,9 +38,15 @@ BoardSettingsLayout::BoardSettingsLayout(QWidget *parent) : QVBoxLayout(parent) 
         if (linesCount < 3 || cellsToWin < 2 || cellsToWin > linesCount)
             return;
 
-        Router::getInstance().replaceScreen(new BoardScreen(linesCount, cellsToWin));
+        controller->startGame(linesCount, cellsToWin);
     });
     addWidget(startNewGameButton);
+
+    auto *backButton = new QPushButton("<- Go back");
+    connect(backButton, &QPushButton::clicked, [=] {
+        Router::getInstance().goBack();
+    });
+    addWidget(backButton);
 }
 
 BoardSettingsLayout::~BoardSettingsLayout() = default;

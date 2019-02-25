@@ -6,7 +6,13 @@
 #include "BoardSettingsLayout.h"
 
 QLayout *BoardSettingsScreen::createLayout() {
-    widgetHeight = 130;
+    widgetHeight = 200;
     widgetWidth = 200;
-    return new BoardSettingsLayout();
+    auto *layout = new BoardSettingsLayout();
+    layout->setController(new BoardSettingsController(isLocalGame));
+    return layout;
+}
+
+BoardSettingsScreen::BoardSettingsScreen(bool isLocalGame) {
+    this->isLocalGame = isLocalGame;
 }
